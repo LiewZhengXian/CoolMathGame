@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://u4eimyi07cla"]
+
+[ext_resource type="Script" path="res://Scripts/CardSlot.gd" id="1_fkac6"]
+[ext_resource type="Texture2D" uid="uid://bykanpw8xlbga" path="res://Assets/CuteCardsPixel.png" id="1_qi4uf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fmwn"]
+atlas = ExtResource("1_qi4uf")
+region = Rect2(351, 37, 23, 34)
+
+[sub_resource type="GDScript" id="GDScript_noguy"]
+script/source = "
+
+extends Sprite2D
+
+# Reference to the Tween
+var tween: Tween
+
+func _ready() -> void:
+	# Create the tween when the sprite is ready
+	tween = create_tween()
+	start_scale_animation()
+
+func start_scale_animation() -> void:
+	# Reset tween if it exists
+	if tween:
+		tween.kill()
+	
+	# Create a new tween
+	tween = create_tween()
+	
+	# Make the tween loop continuously
+	tween.set_loops()
+	
+	# Sequence of scaling animations
+	# Scale up
+	tween.tween_property(self, \"scale\", Vector2(10,10), 0.5)\\
+		.set_trans(Tween.TRANS_BACK)\\
+		.set_ease(Tween.EASE_OUT)
+	
+	# Scale back to original size
+	tween.tween_property(self, \"scale\", Vector2(9.5,9.5), 0.5)\\
+		.set_trans(Tween.TRANS_BACK)\\
+		.set_ease(Tween.EASE_OUT)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htcyi"]
+size = Vector2(114, 168)
+
+[node name="CardSlot" type="Node2D"]
+script = ExtResource("1_fkac6")
+
+[node name="CardSlotImage" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_2fmwn")
+script = SubResource("GDScript_noguy")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_htcyi")

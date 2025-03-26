@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0hyiwkysntf3"]
+
+[ext_resource type="Texture2D" uid="uid://bykanpw8xlbga" path="res://Assets/CuteCardsPixel.png" id="1_33nnw"]
+[ext_resource type="Script" path="res://Scripts/Card.gd" id="1_fso7d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nproi"]
+atlas = ExtResource("1_33nnw")
+region = Rect2(351, 1, 23, 34)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsf22"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(1, 1, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qdt4"]
+size = Vector2(115, 170)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_fso7d")
+
+[node name="CardImage" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -2.84217e-14)
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_nproi")
+
+[node name="CardValue" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -27.5
+offset_right = 20.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qsf22")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_7qdt4")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

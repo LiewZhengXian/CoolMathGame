@@ -1,0 +1,272 @@
+[gd_scene load_steps=22 format=3 uid="uid://cim7mjo82y0lu"]
+
+[ext_resource type="Script" path="res://Scripts/ComposeNumbers.gd" id="1_tsqoj"]
+[ext_resource type="Texture2D" uid="uid://spo0v52c1a3s" path="res://Assets/backgroundColorDesert.png" id="2_5lhdx"]
+[ext_resource type="Shader" path="res://Scripts/Cloud.gdshader" id="2_wodis"]
+[ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="3_gf1yg"]
+[ext_resource type="Theme" uid="uid://yiimtybaehom" path="res://Assets/buttons.tres" id="4_3i01p"]
+[ext_resource type="Texture2D" uid="uid://cc6eqhq88abqj" path="res://Assets/UI_MobileIndivudals_g924.png" id="6_tfelw"]
+[ext_resource type="Texture2D" uid="uid://c122sav2acnqd" path="res://Assets/UI_MobileIndivudals_g933.png" id="7_afl77"]
+[ext_resource type="StyleBox" uid="uid://b50ikm3c15soe" path="res://Assets/LabelOverride.tres" id="7_e4ww8"]
+[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="9_0cup4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1uqdj"]
+shader = ExtResource("2_wodis")
+
+[sub_resource type="SystemFont" id="SystemFont_i2bgy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gwi1t"]
+font = SubResource("SystemFont_i2bgy")
+font_size = 100
+outline_size = 11
+outline_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1bdu"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_xsoie"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hxqh"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_kkj52"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o5gd"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_qh36y"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_138dr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_hn34k"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j67kx"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="ComposeNumbers" type="Node2D"]
+script = ExtResource("1_tsqoj")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_1uqdj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5lhdx")
+
+[node name="HomeButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 860.0
+offset_top = 50.0
+offset_right = 1067.0
+offset_bottom = 271.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_gf1yg")
+flat = true
+
+[node name="NextButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 430.0
+offset_top = 1540.0
+offset_right = 630.0
+offset_bottom = 1640.0
+theme = ExtResource("4_3i01p")
+theme_override_font_sizes/font_size = 30
+text = "Next 
+"
+
+[node name="CheckButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 430.0
+offset_top = 1400.0
+offset_right = 630.0
+offset_bottom = 1500.0
+theme = ExtResource("4_3i01p")
+theme_override_font_sizes/font_size = 30
+text = "Check"
+
+[node name="ClearButton" type="Button" parent="."]
+offset_left = 292.0
+offset_top = 1400.0
+offset_right = 499.0
+offset_bottom = 1621.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("6_tfelw")
+flat = true
+
+[node name="SwitchInputButton" type="Button" parent="."]
+offset_left = 664.0
+offset_top = 1400.0
+offset_right = 871.0
+offset_bottom = 1621.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("7_afl77")
+flat = true
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = 271.0
+offset_right = 928.0
+offset_bottom = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Add the 
+numbers"
+label_settings = SubResource("LabelSettings_gwi1t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 137.0
+label_settings = SubResource("LabelSettings_x1bdu")
+
+[node name="NumberContainer" type="GridContainer" parent="."]
+offset_left = 370.0
+offset_top = 948.0
+offset_right = 470.0
+offset_bottom = 1048.0
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="Button1" type="Button" parent="NumberContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("4_3i01p")
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="Equation" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 264.0
+offset_top = 720.0
+offset_right = 864.0
+offset_bottom = 857.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="FirstNumberLabel" type="Label" parent="Equation"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = ExtResource("7_e4ww8")
+label_settings = SubResource("LabelSettings_xsoie")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusSignLabel" type="Label" parent="Equation"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hxqh")
+text = "+"
+label_settings = SubResource("LabelSettings_kkj52")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondNumberLabel" type="Label" parent="Equation"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = ExtResource("7_e4ww8")
+label_settings = SubResource("LabelSettings_xsoie")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SumLabel" type="Label" parent="Equation"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6o5gd")
+text = "="
+label_settings = SubResource("LabelSettings_qh36y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TargetLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 100)
+offset_left = 252.0
+offset_top = 558.0
+offset_right = 292.0
+offset_bottom = 601.0
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_138dr")
+label_settings = SubResource("LabelSettings_hn34k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 157.0
+offset_top = 1286.0
+offset_right = 197.0
+offset_bottom = 1355.0
+theme = ExtResource("4_3i01p")
+theme_override_styles/normal = ExtResource("7_e4ww8")
+label_settings = SubResource("LabelSettings_j67kx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0cup4")
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_Home_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_Check_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

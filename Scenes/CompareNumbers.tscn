@@ -1,0 +1,189 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0ski5s4bi20v"]
+
+[ext_resource type="Script" path="res://Scripts/CompareNumbers.gd" id="1_ee21c"]
+[ext_resource type="Shader" path="res://Scripts/Cloud.gdshader" id="2_yj6tb"]
+[ext_resource type="Theme" uid="uid://yiimtybaehom" path="res://Assets/buttons.tres" id="3_ie7bo"]
+[ext_resource type="Texture2D" uid="uid://cm8i78oqurksb" path="res://Assets/backgroundCastles.png" id="3_x8ex4"]
+[ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="4_3xypl"]
+[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="6_p6qrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvqav"]
+shader = ExtResource("2_yj6tb")
+
+[sub_resource type="SystemFont" id="SystemFont_tgfhf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a41ry"]
+font = SubResource("SystemFont_tgfhf")
+font_size = 100
+outline_size = 11
+outline_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mght1"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7qdg"]
+line_spacing = 30.0
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ke5g4"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[node name="CompareNumbers" type="Node2D"]
+script = ExtResource("1_ee21c")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="UI"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cvqav")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1040.0
+offset_bottom = 1880.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x8ex4")
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = 271.0
+offset_right = 928.0
+offset_bottom = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Compare
+the numbers"
+label_settings = SubResource("LabelSettings_a41ry")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LessThanButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 1300.0
+offset_right = 853.0
+offset_bottom = 1437.0
+theme = ExtResource("3_ie7bo")
+theme_override_font_sizes/font_size = 40
+text = " Lesser Than "
+
+[node name="GreaterThanButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 1100.0
+offset_right = 888.0
+offset_bottom = 1237.0
+theme = ExtResource("3_ie7bo")
+theme_override_font_sizes/font_size = 40
+text = " Greater Than "
+
+[node name="ResultLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 380.0
+offset_top = 940.0
+offset_right = 544.0
+offset_bottom = 995.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ie7bo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mght1")
+label_settings = SubResource("LabelSettings_o7qdg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number2Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 798.0
+offset_right = 973.0
+offset_bottom = 935.0
+theme_override_font_sizes/font_size = 100
+text = "200"
+label_settings = SubResource("LabelSettings_ke5g4")
+
+[node name="Number1Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 800.0
+offset_right = 321.0
+offset_bottom = 937.0
+theme_override_font_sizes/font_size = 100
+text = "500"
+label_settings = SubResource("LabelSettings_ke5g4")
+
+[node name="HomeButton" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 860.0
+offset_top = 50.0
+offset_right = 1067.0
+offset_bottom = 271.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_3xypl")
+flat = true
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 55.0
+label_settings = SubResource("LabelSettings_ke5g4")
+
+[node name="NextButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 1522.0
+offset_right = 647.0
+offset_bottom = 1622.0
+theme = ExtResource("3_ie7bo")
+text = "Next 
+"
+
+[node name="IsLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 800.0
+offset_right = 786.0
+offset_bottom = 937.0
+theme_override_font_sizes/font_size = 100
+text = "is ________"
+label_settings = SubResource("LabelSettings_ke5g4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p6qrn")
+
+[connection signal="pressed" from="UI/LessThanButton" to="." method="_on_LessThan_pressed"]
+[connection signal="pressed" from="UI/GreaterThanButton" to="." method="_on_GreaterThan_pressed"]
+[connection signal="pressed" from="UI/HomeButton" to="." method="_on_Home_pressed"]
+[connection signal="pressed" from="UI/NextButton" to="." method="_on_Next_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

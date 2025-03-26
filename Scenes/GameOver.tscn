@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5wbi5ugv2sq1"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_j5jjt"]
+[ext_resource type="Texture2D" uid="uid://w1pdg2k1f4yh" path="res://Assets/backgroundColorFall.png" id="2_6ubny"]
+[ext_resource type="Shader" path="res://Scripts/Cloud.gdshader" id="2_vqyvg"]
+[ext_resource type="Theme" uid="uid://yiimtybaehom" path="res://Assets/buttons.tres" id="4_wg72u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4tmaw"]
+shader = ExtResource("2_vqyvg")
+
+[sub_resource type="SystemFont" id="SystemFont_pcar4"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7lmb"]
+font = SubResource("SystemFont_pcar4")
+font_size = 100
+outline_size = 11
+outline_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fbhl"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j0da0"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j5jjt")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_4tmaw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6ubny")
+
+[node name="BackToMainMenu" type="Button" parent="."]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 165.0
+offset_right = 257.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_wg72u")
+theme_override_font_sizes/font_size = 25
+text = "Back To Main Menu"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.0
+offset_top = -668.0
+offset_right = 405.0
+offset_bottom = -391.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_l7lmb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -107.0
+offset_right = 100.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_8fbhl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 471.0
+offset_top = 610.0
+offset_right = 511.0
+offset_bottom = 670.0
+label_settings = SubResource("LabelSettings_j0da0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]

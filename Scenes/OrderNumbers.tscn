@@ -1,0 +1,246 @@
+[gd_scene load_steps=21 format=3 uid="uid://bw3d2dkrt4ug8"]
+
+[ext_resource type="Script" path="res://Scripts/OrderNumbers.gd" id="1_0pwwj"]
+[ext_resource type="Shader" path="res://Scripts/Cloud.gdshader" id="2_regw1"]
+[ext_resource type="Theme" uid="uid://yiimtybaehom" path="res://Assets/buttons.tres" id="3_20dav"]
+[ext_resource type="Texture2D" uid="uid://pxt6wnsnsip4" path="res://Assets/backgroundColorForest.png" id="3_lj662"]
+[ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="4_tg6gc"]
+[ext_resource type="Texture2D" uid="uid://dukyhf3fnxhdr" path="res://Assets/UI_MobileIndivudals_g945.png" id="5_yk2t5"]
+[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="7_n18c4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uuod0"]
+shader = ExtResource("2_regw1")
+
+[sub_resource type="SystemFont" id="SystemFont_e2v41"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pbqwa"]
+font = SubResource("SystemFont_e2v41")
+font_size = 100
+outline_size = 11
+outline_color = Color(0, 0, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uv142"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_y38ye"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p284p"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j30pe"]
+texture = ExtResource("5_yk2t5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mx4lw"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0b7e"]
+texture = ExtResource("5_yk2t5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eeybm"]
+texture = ExtResource("5_yk2t5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrb17"]
+texture = ExtResource("5_yk2t5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lvfn"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xret"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="OrderNumbers" type="Node2D"]
+script = ExtResource("1_0pwwj")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_uuod0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lj662")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 146.0
+offset_top = 291.0
+offset_right = 948.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Order the 
+numbers"
+label_settings = SubResource("LabelSettings_pbqwa")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 207.0
+offset_top = 1168.0
+offset_right = 371.0
+offset_bottom = 1223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_20dav")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_uv142")
+label_settings = SubResource("LabelSettings_y38ye")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 900.0
+offset_top = 40.0
+offset_right = 1107.0
+offset_bottom = 261.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_tg6gc")
+flat = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 137.0
+label_settings = SubResource("LabelSettings_p284p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 190.0
+offset_top = 926.0
+offset_right = 890.0
+offset_bottom = 1063.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="NumberBox0" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("3_20dav")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_j30pe")
+text = "0
+"
+label_settings = SubResource("LabelSettings_mx4lw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberBox1" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("3_20dav")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l0b7e")
+text = "1"
+label_settings = SubResource("LabelSettings_mx4lw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberBox2" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("3_20dav")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eeybm")
+text = "2"
+label_settings = SubResource("LabelSettings_mx4lw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberBox3" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("3_20dav")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rrb17")
+text = "3"
+label_settings = SubResource("LabelSettings_mx4lw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NumberBox4" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme = ExtResource("3_20dav")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rrb17")
+text = "4"
+label_settings = SubResource("LabelSettings_mx4lw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrderLabel" type="Label" parent="."]
+offset_left = 74.0
+offset_top = 611.0
+offset_right = 114.0
+offset_bottom = 704.0
+theme = ExtResource("3_20dav")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7lvfn")
+label_settings = SubResource("LabelSettings_8xret")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 430.0
+offset_top = 1300.0
+offset_right = 630.0
+offset_bottom = 1400.0
+theme = ExtResource("3_20dav")
+theme_override_font_sizes/font_size = 35
+text = "Check"
+
+[node name="NextButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 430.0
+offset_top = 1440.0
+offset_right = 630.0
+offset_bottom = 1540.0
+theme = ExtResource("3_20dav")
+text = "Next"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_n18c4")
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_Check_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_Next_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
