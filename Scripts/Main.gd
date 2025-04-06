@@ -16,7 +16,7 @@ var game_active = false
 func _ready():
 	# Initialize randomizer
 	randomize()
-
+	$AudioStreamPlayer2D.play()
 	# Get references
 	score_label = $UI/ScoreLabel
 	timer_label = $UI/TimerLabel
@@ -132,3 +132,6 @@ func _input(event):
 		if event.pressed and event.keycode == KEY_SPACE:
 # Reload the current scene to restart
 			get_tree().reload_current_scene()
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play()

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cc6eqhq88abqj" path="res://Assets/UI_MobileIndivudals_g924.png" id="6_tfelw"]
 [ext_resource type="Texture2D" uid="uid://c122sav2acnqd" path="res://Assets/UI_MobileIndivudals_g933.png" id="7_afl77"]
 [ext_resource type="StyleBox" uid="uid://b50ikm3c15soe" path="res://Assets/LabelOverride.tres" id="7_e4ww8"]
-[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="9_0cup4"]
+[ext_resource type="AudioStream" uid="uid://pg7asx326jci" path="res://Assets/Audio/i-love-my-8-bit-game-console-301272.mp3" id="9_cuv7d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1uqdj"]
 shader = ExtResource("2_wodis")
@@ -264,7 +264,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_0cup4")
+stream = ExtResource("9_cuv7d")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_Home_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_Next_pressed"]

@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://yiimtybaehom" path="res://Assets/buttons.tres" id="3_ie7bo"]
 [ext_resource type="Texture2D" uid="uid://cm8i78oqurksb" path="res://Assets/backgroundCastles.png" id="3_x8ex4"]
 [ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="4_3xypl"]
-[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="6_p6qrn"]
+[ext_resource type="AudioStream" uid="uid://pg7asx326jci" path="res://Assets/Audio/i-love-my-8-bit-game-console-301272.mp3" id="6_e0klw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cvqav"]
 shader = ExtResource("2_yj6tb")
@@ -180,7 +180,7 @@ text = "is ________"
 label_settings = SubResource("LabelSettings_ke5g4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_p6qrn")
+stream = ExtResource("6_e0klw")
 
 [connection signal="pressed" from="UI/LessThanButton" to="." method="_on_LessThan_pressed"]
 [connection signal="pressed" from="UI/GreaterThanButton" to="." method="_on_GreaterThan_pressed"]

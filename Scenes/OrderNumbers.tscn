@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pxt6wnsnsip4" path="res://Assets/backgroundColorForest.png" id="3_lj662"]
 [ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="4_tg6gc"]
 [ext_resource type="Texture2D" uid="uid://dukyhf3fnxhdr" path="res://Assets/UI_MobileIndivudals_g945.png" id="5_yk2t5"]
-[ext_resource type="AudioStream" uid="uid://dmaefxowcgfrr" path="res://Assets/Audio/main_menu_tune.mp3" id="7_n18c4"]
+[ext_resource type="AudioStream" uid="uid://pg7asx326jci" path="res://Assets/Audio/i-love-my-8-bit-game-console-301272.mp3" id="7_730pp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uuod0"]
 shader = ExtResource("2_regw1")
@@ -238,7 +238,7 @@ theme = ExtResource("3_20dav")
 text = "Next"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_n18c4")
+stream = ExtResource("7_730pp")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="CheckButton" to="." method="_on_Check_pressed"]

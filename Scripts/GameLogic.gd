@@ -129,6 +129,7 @@ func check_if_round_complete():
 		round_in_progress = false
 
 func calculate_score():
+	$"../ScoreSound".play()
 	var slot_values = []
 	
 	# Get values from filled slots

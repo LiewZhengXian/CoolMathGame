@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6spio6b1rcr8"]
+[gd_scene load_steps=16 format=3 uid="uid://c6spio6b1rcr8"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_8gg7r"]
 [ext_resource type="Script" path="res://Scripts/CardManager.gd" id="1_mkjuf"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cc6eqhq88abqj" path="res://Assets/UI_MobileIndivudals_g924.png" id="3_w06v6"]
 [ext_resource type="Texture2D" uid="uid://dbpreffuygf0o" path="res://Assets/UI_MobileIndivudals_g938.png" id="4_pi25c"]
 [ext_resource type="Script" path="res://Scripts/GameLogic.gd" id="6_m8fqk"]
+[ext_resource type="AudioStream" uid="uid://pg7asx326jci" path="res://Assets/Audio/i-love-my-8-bit-game-console-301272.mp3" id="10_xijy6"]
+[ext_resource type="AudioStream" uid="uid://c0se70rmrgk26" path="res://Assets/Audio/drop_001.ogg" id="11_b3cc3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18xpc"]
 shader = ExtResource("2_ceu07")
@@ -128,5 +130,12 @@ script = ExtResource("1_mkjuf")
 [node name="GameLogic" type="Node2D" parent="."]
 script = ExtResource("6_m8fqk")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_xijy6")
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_b3cc3")
+
 [connection signal="pressed" from="UI/Reset" to="CardManager" method="_on_reset_pressed"]
 [connection signal="pressed" from="UI/HomeButton" to="GameLogic" method="_on_Home_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
